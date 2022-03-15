@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/stilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Hello, world!</title>
+</head>
+
+<body class="contenedor"><br>
+    <section hidden>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                        <button class="btn btn-outline-success" type="button" id="btnAgregar">Agregar</button>
+                    </form>
+                </div>
+            </div>
+        </nav><br>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card" style="border-radius: 15px !important;">
+                        <h5 class="card-title text-center"><b>Formulario</b></h5>
+                        <div class="card-body overflow-auto contenedor">
+                            <form>
+                                <div class="row" id="formulario">
+                                    <div class="mb-3 col-6">
+                                        <b>Nombre</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">Email address</label> -->
+                                        <input type="text" class="form-control" id="name"
+                                            aria-describedby="">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>telefono</b>
+                                        <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                                        <input type="text" class="form-control" id="phone">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>Email</b>
+                                        <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+                                        <input type="text" class="form-control" id="email"
+                                            aria-describedby="textHelp">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>Dirección</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text</label> -->
+                                        <input type="text" class="form-control" id="address">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>Codigo postal</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text address</label> -->
+                                        <input type="text" class="form-control" id="postalZip"
+                                            aria-describedby="textHelp">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>Region</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text</label> -->
+                                        <input type="text" class="form-control" id="region">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>Ciudad</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text</label> -->
+                                        <input type="text" class="form-control" id="country">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>List</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text</label> -->
+                                        <input type="number" class="form-control" id="list">
+                                    </div>
+                                    <div class="mb-3 col-12">
+                                        <b>Text</b>
+                                        <textarea name="" id="text" class="form-control" cols="30" rows="2"></textarea>
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>Rango de número</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text</label> -->
+                                        <input type="number" class="form-control" id="numberrange">
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <b>Currency</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text</label> -->
+                                        <input type="text" class="form-control" id="currency">
+                                    </div>
+                                    <div class="mb-3 col-12">
+                                        <b>Alphanumeric</b>
+                                        <!-- <label for="exampleInputtext1" class="form-label">text</label> -->
+                                        <input type="text" class="form-control" id="alphanumeric">
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="btn btn-primary form-control" id="btnGuardar">Ingresar
+                                            <i class="bx bx-share bx-flip-horizontal"></i>
+                                        </a>
+                                        <a class="btn btn-primary form-control" id="btnActualizar" hidden>Actualizar
+                                            <i class="bx bx-share bx-flip-horizontal"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="btn btn-outline-danger form-control" id="btnClear">
+                                            Limpiar<i class="bx bxs-eraser"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-8">
+                    <div class="card" style="border-radius: 15px !important;">
+                        <h5 class="card-title text-center"><b>Lista de Dummys</b></h5>
+                        <div class="card-body">
+                            <div class="table-responsive overflow-auto contenedor" style="height: 85vh">
+                                <table class="table" id="tblDummy">
+                                    <thead class="sticky-top bg-white">
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">phone</th>
+                                            <th scope="col">email</th>
+                                            <th scope="col">address</th>
+                                            <th scope="col">postalZip</th>
+                                            <th scope="col">region</th>
+                                            <th scope="col">country</th>
+                                            <th scope="col">list</th>
+                                            <th scope="col">text</th>
+                                            <th scope="col">numberrange</th>
+                                            <th scope="col">currency</th>
+                                            <th scope="col">alphanumeric</th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td scope="col">Name</td>
+                                        <td scope="col">phone</td>
+                                        <td scope="col">email</td>
+                                        <td scope="col">address</td>
+                                        <td scope="col">postalZip</td>
+                                        <td scope="col">region</td>
+                                        <td scope="col">country</td>
+                                        <td scope="col">list</td>
+                                        <td scope="col"><textarea name="" id="" cols="30" rows="5">
+                                            text
+                                        </textarea></td>
+                                        <td scope="col">numberrange</td>
+                                        <td scope="col">currency</td>
+                                        <td scope="col">alphanumeric</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <template id="dummyTemplate">
+        <tr>
+            <td class="name"></td>
+            <td class="phone"></td>
+            <td class="email"></td>
+            <td class="address"></td>
+            <td class="postalZip"></td>
+            <td class="region"></td>
+            <td class="country"></td>
+            <td class="list"></td>
+            <td class="text"></td>
+            <td class="numberrange"></td>
+            <td class="currency"></td>
+            <td class="alphanumeric"></td>
+            <td class="editar"></td>
+            <td class="eliminar"></td>
+        </tr>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="js/index.js" type="module"></script>
+
+</body>
+
+</html>

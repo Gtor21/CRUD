@@ -40,13 +40,15 @@ function Paint_tblDummy(data) {
             $tblDummyTemp.querySelector('.region').textContent = region;
             $tblDummyTemp.querySelector('.country').textContent = country;
             $tblDummyTemp.querySelector('.list').textContent = list;
-            $tblDummyTemp.querySelector('.text').innerHTML = `<textarea class="bg-transparent border-0" name="" id="" cols="30" rows="5" disabled>${text}</textarea>`;
+            $tblDummyTemp.querySelector('.text').innerHTML = `<textarea class="bg-transparent contenedor border-0" name="" id="" cols="30" rows="5" disabled>${text}</textarea>`;
             $tblDummyTemp.querySelector('.numberrange').textContent = numberrange;
             $tblDummyTemp.querySelector('.currency').textContent = currency;
             $tblDummyTemp.querySelector('.alphanumeric').textContent = alphanumeric;
             $tblDummyTemp.querySelector('.editar').innerHTML = `<a class="btn btn-outline-warning m-0 btnEdit" data-name="${name}" data-phone="${phone}" data-email="${email}"
              data-address="${address}" data-postalZip="${postalZip}" data-region="${region}" data-country="${country}" data-list="${list}" data-text="${text}" data-numberrange="${numberrange}"
-             data-currency="${currency}" data-alphanumeric="${alphanumeric}"><i class="bx bxs-pencil"></i></a>`;
+             data-currency="${currency}" data-alphanumeric="${alphanumeric}"><i class="bx bxs-pencil" data-name="${name}" data-phone="${phone}" data-email="${email}"
+             data-address="${address}" data-postalZip="${postalZip}" data-region="${region}" data-country="${country}" data-list="${list}" data-text="${text}" data-numberrange="${numberrange}"
+             data-currency="${currency}" data-alphanumeric="${alphanumeric}"></i></a>`;
             $tblDummyTemp.querySelector('.eliminar').innerHTML = `<a class="btn btn-outline-danger m-0 btnDelete" data-alphanumeric="${alphanumeric}"><i class="bx bxs-trash-alt"></i></a>`;
 
             let clone = document.importNode($tblDummyTemp, true);
@@ -96,10 +98,23 @@ export async function Eliminar() {
     document.addEventListener('click', async (e) => {
         if (e.target.matches(".btnDelete") || e.target.matches(".btnDelete *")) {
             let alphanumeric = e.target.getAttribute("data-alphanumeric");
-            // console.log(alphanumeric);
             let data = await ajax(URL.API_DUMMY + "/" + alphanumeric, {
+                headers: {'Content-Type': 'application/json'},
                 method: "DELETE"
             });
+            if (data) {
+                Swal.fire(
+                    'Eliminado',
+                    'You clicked the button!',
+                    'success'
+                )
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Hay un problema con la información',
+                  })
+            }
         }
     });
 }
@@ -123,6 +138,7 @@ export async function Guardar() {
     document.addEventListener("click", async (e) => {
         if (e.target.matches("#btnGuardar") || e.target.matches("#btnGuardar *")) {
             let data = await ajax(URL.API_DUMMY, {
+                headers: {'Content-Type': 'application/json'},
                 method: "POST",
                 body: JSON.stringify({
                     name: $txtName.value,
@@ -139,6 +155,19 @@ export async function Guardar() {
                     alphanumeric: $txtAlphanumeric.value
                 })
             })
+            if (data) {
+                Swal.fire(
+                    'Guardado',
+                    'You clicked the button!',
+                    'success'
+                )
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Verifique que la informacion esté correcta',
+                  })
+            }
         }
     });
 }
@@ -147,35 +176,36 @@ export async function Actualizar() {
     document.addEventListener("click", async (e) => {
         if (e.target.matches("#btnActualizar") || e.target.matches("#btnActualizar *")) {
             let data = await ajax(URL.API_DUMMY + "/" + $txtAlphanumeric.value, {
+                headers: {'Content-Type': 'application/json'},
                 method: "PUT",
                 body: JSON.stringify({
-                    name: "Jhosep Rouse",
-                    phone: "(59) 3125789874",
-                    email: "Jhosep@email.com",
-                    address: "Av 578 - 28",
-                    postalZip: "7856",
-                    region: "North",
-                    country: "Suiza",
-                    list: "1",
-                    text: "Suiza is a country very big and very frost",
-                    numberrange: "50",
-                    currency: "$6.000",
-                    alphanumeric: "ADOSASDA5615"
-                    /* 
-                    name:$txtName.value,
-                    phone:$txtPhone.value,
-                    email:$txtEmail.value,
-                    address:$txtAddress.value,
-                    postalZip:$txtPostalZip.value,
-                    region:$txtRegion.value,
-                    country:$txtCountry.value,
-                    list: $txtList.value,
-                    text:$txtText.value,
-                    numberrange:$txtNumberrange.value,
-                    currency:$txtCurrency.value,
-                    alphanumeric:$txtAlphanumeric.value */
+                    name: $txtName.value,
+                    phone: $txtPhone.value,
+                    email: $txtEmail.value,
+                    address: $txtAddress.value,
+                    postalZip: $txtPostalZip.value,
+                    region: $txtRegion.value,
+                    country: $txtCountry.value,
+                    list:  $txtList.value,
+                    text: $txtText.value,
+                    numberrange: $txtNumberrange.value,
+                    currency: $txtCurrency.value,
+                    alphanumeric: $txtAlphanumeric.value,
                 })
             })
+            if (data) {
+                Swal.fire(
+                    'Actualizado',
+                    'You clicked the button!',
+                    'success'
+                )
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Verifique que la informacion esté correcta',
+                  })
+            }
         }
     });
 }
